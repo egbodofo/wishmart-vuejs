@@ -52,7 +52,7 @@
       <mdb-col md="6">
         <h4 class="text-center mt-4">Your Order Summary</h4>
         <mdb-card-body>
-          <mdb-tbl>
+          <mdb-tbl responsive>
             <mdb-tbl-head color="mdb-color" class="lighten-5">
               <tr>
                 <th>
@@ -81,10 +81,11 @@
               </tr>
             </mdb-tbl-body>
           </mdb-tbl>
+
           <div class="d-flex">
-            <h2 class="my-4 pr-4">
+            <p class="my-4 pr-4">
               <strong>Total: ₦{{ total }}</strong>
-            </h2>
+            </p>
             <div>
               <mdb-btn type="submit" color="success">
                 <a class="text-reset" href="/pay">Confirm Order</a>

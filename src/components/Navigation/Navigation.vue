@@ -1,8 +1,6 @@
 <template>
   <mdb-navbar expand="large" dark color="indigo">
-    <mdb-navbar-brand to="#">
-      Wishmart
-    </mdb-navbar-brand>
+    <mdb-navbar-brand to="#">Wishmart</mdb-navbar-brand>
     <mdb-navbar-toggler>
       <mdb-navbar-nav right>
         <mdb-nav-item to="/" active>Home</mdb-nav-item>
@@ -14,13 +12,13 @@
 
         <mdb-dropdown tag="li" class="nav-item">
           <mdb-dropdown-toggle
+            v-if="auth"
             tag="a"
             navLink
             color="indigo"
             slot="toggle"
             waves-fixed
-            >Profile</mdb-dropdown-toggle
-          >
+          >Profile</mdb-dropdown-toggle>
           <mdb-dropdown-menu>
             <mdb-dropdown-item>Action</mdb-dropdown-item>
             <mdb-dropdown-item>Another action</mdb-dropdown-item>
@@ -51,7 +49,7 @@ export default {
       return this.$store.getters.isAuthenticated;
     },
   },
-  name: 'HelloWorld',
+  name: 'Navigation',
   components: {
     mdbNavbar,
     mdbNavbarBrand,

@@ -1,10 +1,10 @@
 <template>
-  <div class="push-up">
+  <div id="push-body-up">
     <mdb-footer color="indigo" id="MyFoot" class="font-small">
       <div class="footer-copyright text-center py-3 font-small">
         <mdb-container fluid>
-          &copy; 2019 Copyright:
-          <h5 class="text-monospace">Wishmart Designed by Oluwafemi Egbodofo with Stutord</h5>
+          &copy; 2019:
+          <p class="text-monospace">Wishmart Designed by Oluwafemi Egbodofo with Stutord</p>
         </mdb-container>
       </div>
     </mdb-footer>
@@ -30,7 +30,7 @@ export default {
   width: 100%;
   left: 0;
 }
-.push-up {
-  margin-top: 5em;
+.push-body-up {
+  padding-top: 1em;
 }
 </style>

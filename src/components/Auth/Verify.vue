@@ -14,25 +14,11 @@
               </h5>
 
               <div class="grey-text">
-                <mdb-input
-                  required
-                  label="email"
-                  icon="envelope"
-                  v-model="name"
-                  type="email"
-                />
-                <mdb-input
-                  required
-                  label="password"
-                  icon="lock"
-                  v-model="password"
-                  type="password"
-                />
+                <mdb-input required label="email" icon="envelope" v-model="email" type="email" />
+                <mdb-input required label="code" icon="lock" v-model="code" type="password" />
               </div>
               <div class="text-center py-2 mt-2">
-                <mdb-btn color="cyan" type="submit">
-                  Verify
-                </mdb-btn>
+                <mdb-btn color="cyan" type="submit">Verify</mdb-btn>
               </div>
             </form>
           </mdb-card-body>

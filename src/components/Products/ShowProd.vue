@@ -1,57 +1,67 @@
 <template>
   <mdb-container>
-    <!-- <div class="show"> -->
-    <mdb-row class="pt-3">
-      <mdb-col>
-        <img class="my-image" :src="image" />
-      </mdb-col>
-
-      <mdb-col>
+    <mdb-row>
+      <mdb-col class="colo text-center mt-4" md="6">
         <div>
-          <h3>
-            Name:
-            <strong>{{ name }}</strong>
-          </h3>
-          <hr />
-
-          <h4>Brand: {{ brand }}</h4>
-          <hr />
-
-          <h5>
-            Price: ₦
-            {{ price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') }}
-          </h5>
-
-          <hr />
-          <div class="top" v-if="owner === this.user.sub">
-            <p>
-              <router-link :to="path">
-                <a class="btn btn-info">Edit</a>
-              </router-link>
-            </p>
-
-            <button @click="deleteProduct" class="btn btn-danger">Delete</button>
-          </div>
+          <img class="my-image" :src="image" />
         </div>
 
-        <router-link to="/products" class="btn btn-success">Back to product</router-link>
+        <mdb-btn @click="addToCart(product)" class="btn btn-success">
+          Add to cart
+          <span>
+            <mdb-icon title="Add to cart" icon="shopping-cart" />
+          </span>
+        </mdb-btn>
+      </mdb-col>
+
+      <mdb-col class="colo text-center mt-4" md="6">
+        <p>
+          Name:
+          <strong>{{ name }}</strong>
+        </p>
+        <hr />
+
+        <p>Brand: {{ brand }}</p>
+        <hr />
+
+        <p>
+          Price: ₦
+          {{ price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') }}
+        </p>
+
+        <hr />
+
+        <p>Description: {{ description }}</p>
+        <hr />
+
+        <div class="top" v-if="owner === this.user.sub">
+          <p>
+            <router-link :to="path">
+              <a class="btn btn-info">Edit</a>
+            </router-link>
+          </p>
+
+          <button @click="deleteProduct" class="btn btn-danger">Delete</button>
+        </div>
+        <!-- </div> -->
+
+        <router-link to="/products" class="btn btn-sm btn-success">Back to product</router-link>
       </mdb-col>
     </mdb-row>
-    <!-- </div> -->
   </mdb-container>
 </template>
 
 <script>
 import axios from 'axios';
 import cookie from 'js-cookie';
-import { mdbContainer, mdbCol, mdbRow } from 'mdbvue';
+import { mdbContainer, mdbCol, mdbRow, mdbIcon, mdbBtn } from 'mdbvue';
 
 export default {
   name: 'Product',
 
   data() {
     return {
-      product: null,
+      product: [],
       name: '',
       price: '',
       image: '',
@@ -65,6 +75,8 @@ export default {
     mdbContainer,
     mdbCol,
     mdbRow,
+    mdbIcon,
+    mdbBtn,
   },
   computed: {
     token() {
@@ -89,6 +101,10 @@ export default {
           this.$router.push('/products');
         })
         .catch(error => console.log(error));
+    },
+    addToCart(product) {
+      alert('Item added to cart!!!');
+      this.$store.commit('addToCart', product);
     },
   },
   mounted() {
@@ -119,7 +135,7 @@ export default {
   justify-content: space-between;
 }
 .my-image {
-  max-width: 350px !important;
+  max-width: 280px !important;
   max-height: auto !important;
   min-width: 220px !important;
   min-height: 220px !important;
@@ -128,7 +144,9 @@ export default {
   -moz-box-shadow: 0px 3px 38px -8px rgba(3, 23, 247, 0.88) !important;
   box-shadow: 0px 3px 38px -8px rgba(3, 23, 247, 0.88) !important;
 }
-.row {
-  width: 70%;
+.colo {
+  width: 100%;
+  margin: 0 auto;
+  justify-content: center;
 }
 </style>

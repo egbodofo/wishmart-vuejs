@@ -7,11 +7,14 @@
       <mdb-col
         mt="3"
         id="dark"
+        @click="next"
         class="col-sm-12 col-lg-3 col-md-6 mb-4 text-center"
         v-for="product in products.slice(-4)"
         :key="product.id"
       >
-        <img class="my-image" :src="product.image" />
+        <router-link :to="{ path: '/product/' + product.id }">
+          <img class="my-image" :src="product.image" />
+        </router-link>
       </mdb-col>
     </mdb-row>
   </mdb-container>
@@ -31,7 +34,7 @@ export default {
   },
   data() {
     return {
-      products: null,
+      products: [],
       items: [
         {
           img: true,
@@ -53,12 +56,17 @@ export default {
       this.products = res.data.products;
     });
   },
+  // methods: {
+  //   next() {
+  //     this.$router.push('/products');
+  //   },
+  // },
 };
 </script>
 
 <style>
 .caro {
-  width: 75%;
+  min-width: 80%;
   padding-top: 10px;
   margin: 0 auto;
   padding-bottom: 2em;
