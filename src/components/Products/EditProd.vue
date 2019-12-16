@@ -19,7 +19,7 @@
                 <mdb-input
                   required
                   label="Price"
-                  icon="key"
+                  icon="coins"
                   v-model="price"
                   type="number"
                   value="price"
@@ -27,7 +27,7 @@
                 <mdb-input
                   required
                   label="Image"
-                  icon="user"
+                  icon="image"
                   v-model="image"
                   type="text"
                   value="image"
@@ -35,7 +35,7 @@
                 <mdb-input
                   required
                   label="Brand"
-                  icon="key"
+                  icon="clone"
                   v-model="brand"
                   type="text"
                   value="brand"
@@ -43,16 +43,14 @@
                 <mdb-input
                   required
                   label="Description"
-                  icon="key"
+                  icon="info"
                   v-model="description"
                   type="text"
                   value="description"
                 />
               </div>
               <div class="text-center py-2 mt-2">
-                <mdb-btn color="cyan" type="submit">
-                  Submit
-                </mdb-btn>
+                <mdb-btn color="cyan" type="submit">Submit</mdb-btn>
               </div>
             </form>
           </mdb-card-body>

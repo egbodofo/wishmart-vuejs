@@ -76,16 +76,16 @@
       </mdb-card-body>
     </mdb-card>
     <div class="text-center">
-      <mdb-btn class="my-4" color="danger">
+      <mdb-btn class="my-4 btn-sm" color="danger">
         <strong>Total: ₦{{ total }}</strong>
       </mdb-btn>
-      <mdb-btn class="mr-3">
+      <mdb-btn class="mr-3 btn-sm">
         <router-link to="/products">
           <a class="cam">Continue Shopping</a>
         </router-link>
       </mdb-btn>
 
-      <mdb-btn v-if="auth" class="mr-3" color="primary">
+      <mdb-btn v-if="auth" class="mr-3 btn-sm" color="primary">
         <router-link to="/checkout">
           <a class="cam">Checkout</a>
         </router-link>

@@ -87,7 +87,7 @@
               <strong>Total: ₦{{ total }}</strong>
             </p>
             <div>
-              <mdb-btn type="submit" color="success">
+              <mdb-btn class="btn-sm" type="submit" color="success">
                 <a class="text-reset" href="/pay">Confirm Order</a>
               </mdb-btn>
             </div>

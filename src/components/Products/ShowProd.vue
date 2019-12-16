@@ -6,7 +6,7 @@
           <img class="my-image" :src="image" />
         </div>
 
-        <mdb-btn @click="addToCart(product)" class="btn btn-success">
+        <mdb-btn @click="addToCart(product)" class="btn btn-sm btn-success">
           Add to cart
           <span>
             <mdb-icon title="Add to cart" icon="shopping-cart" />
@@ -37,11 +37,11 @@
         <div class="top" v-if="owner === this.user.sub">
           <p>
             <router-link :to="path">
-              <a class="btn btn-info">Edit</a>
+              <a class="btn btn-sm btn-info">Edit</a>
             </router-link>
           </p>
 
-          <button @click="deleteProduct" class="btn btn-danger">Delete</button>
+          <button @click="deleteProduct" class="btn btn-sm btn-danger">Delete</button>
         </div>
         <!-- </div> -->
 
