@@ -73,8 +73,6 @@ import {
   mdbCardImage,
   mdbCardTitle,
   mdbIcon,
-  // mdbView,
-  // mdbTooltip,
 } from 'mdbvue';
 export default {
   data() {
@@ -94,8 +92,6 @@ export default {
     mdbCardImage,
     mdbCardTitle,
     mdbIcon,
-    // mdbView,
-    // mdbTooltip,
   },
   computed: {
     token() {
@@ -114,7 +110,6 @@ export default {
   },
   mounted() {
     axios.get('/products').then(res => {
-      // console.log(res.data);
       this.products = res.data.products;
     });
   },
@@ -124,9 +119,6 @@ export default {
 <style scoped>
 .top {
   margin-bottom: 10px;
-}
-.camp {
-  padding: 0;
 }
 .image {
   width: 100%;

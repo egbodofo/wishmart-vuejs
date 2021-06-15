@@ -122,7 +122,4 @@ export default {
   width: 38%;
   margin: 25px auto;
 }
-/* .formss {
-  margin-bottom: 5em;
-} */
 </style>

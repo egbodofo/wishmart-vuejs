@@ -1,9 +1,9 @@
 <template>
   <mdb-container>
     <mdb-row>
-      <mdb-col class="colo text-center mt-4" md="6">
+      <mdb-col class="show-prod-col text-center mt-4" md="6">
         <div>
-          <img class="my-image" :src="image" />
+          <img class="my-image" alt="show-prod-img" :src="image" />
         </div>
 
         <mdb-btn @click="addToCart(product)" class="btn btn-sm btn-success">
@@ -14,7 +14,7 @@
         </mdb-btn>
       </mdb-col>
 
-      <mdb-col class="colo text-center mt-4" md="6">
+      <mdb-col class="show-prod-col text-center mt-4" md="6">
         <p>
           Name:
           <strong>{{ name }}</strong>
@@ -43,8 +43,6 @@
 
           <button @click="deleteProduct" class="btn btn-sm btn-danger">Delete</button>
         </div>
-        <!-- </div> -->
-
         <router-link to="/products" class="btn btn-sm btn-success">Back to product</router-link>
       </mdb-col>
     </mdb-row>
@@ -111,7 +109,6 @@ export default {
     const authUser = cookie.get('user');
     if (authUser) {
       this.user = JSON.parse(authUser);
-      // console.log(this.user);
     }
     axios.get(`/product/${this.$route.params.id}`).then(res => {
       this.product = res.data.product;
@@ -129,8 +126,6 @@ export default {
 <style scoped>
 .top {
   margin-bottom: 0.8px;
-}
-.top {
   width: 100%;
   justify-content: space-between;
 }
@@ -144,7 +139,7 @@ export default {
   -moz-box-shadow: 0px 3px 38px -8px rgba(3, 23, 247, 0.88) !important;
   box-shadow: 0px 3px 38px -8px rgba(3, 23, 247, 0.88) !important;
 }
-.colo {
+.show-prod-col {
   width: 100%;
   margin: 0 auto;
   justify-content: center;

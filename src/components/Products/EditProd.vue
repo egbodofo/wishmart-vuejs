@@ -116,7 +116,6 @@ export default {
         brand: this.brand,
         description: this.description,
       };
-      // console.log(editData);
       const token = cookie.get('token');
       axios
         .patch(`/product/${this.$route.params.id}`, editData, {

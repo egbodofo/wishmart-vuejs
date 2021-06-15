@@ -6,9 +6,9 @@
         <mdb-card>
           <mdb-card-body>
             <form @submit.prevent="onSubmit">
-              <h1 class="top">Membership Verification</h1>
+              <h1 class="verify-form">Membership Verification</h1>
 
-              <h5 class="top">
+              <h5 class="verify-form">
                 Confirm your account with the code you received on your
                 registered email!
               </h5>
@@ -64,7 +64,6 @@ export default {
         email: this.email,
         code: this.code,
       };
-      // console.log(formData);
       axios
         .post('/verify', formData)
         .then(res => {
@@ -77,7 +76,7 @@ export default {
 </script>
 
 <style scoped>
-.top {
+.verify-form {
   text-align: center;
 }
 .code {

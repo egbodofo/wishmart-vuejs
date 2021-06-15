@@ -13,7 +13,7 @@
         :key="product.id"
       >
         <router-link :to="{ path: '/product/' + product.id }">
-          <img class="my-image" :src="product.image" />
+          <img class="my-image" alt="my-image" :src="product.image" />
         </router-link>
       </mdb-col>
     </mdb-row>
@@ -56,11 +56,6 @@ export default {
       this.products = res.data.products;
     });
   },
-  // methods: {
-  //   next() {
-  //     this.$router.push('/products');
-  //   },
-  // },
 };
 </script>
 

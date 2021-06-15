@@ -1,5 +1,5 @@
 <template>
-  <div id="push-body-up">
+  <div id="wishmart-footer">
     <mdb-footer color="indigo" id="MyFoot" class="font-small">
       <div class="footer-copyright text-center py-3 font-small">
         <mdb-container fluid>
@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { mdbFooter, mdbContainer, mdbRow, mdbCol } from 'mdbvue';
+import { mdbFooter, mdbContainer } from 'mdbvue';
 export default {
   name: 'FooterPage',
   components: {
@@ -30,7 +30,7 @@ export default {
   width: 100%;
   left: 0;
 }
-.push-body-up {
+.wishmart-footer {
   padding-top: 1em;
 }
 </style>
